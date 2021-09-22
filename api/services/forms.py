@@ -84,3 +84,15 @@ def sort_supervisors(supervisors, field_list):
 				sorted_sups.append(sup)
 
 		return sorted_sups
+
+
+def is_valid_form(form_data):
+	"""
+	Checks form data for all mandatory fields.
+	"""
+	required_fields = ["firstName", "lastName", "supervisor"]
+	for f in required_fields:
+		if form_data.get(f) == None:
+			return False
+	return True
+
