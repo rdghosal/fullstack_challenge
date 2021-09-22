@@ -39,6 +39,12 @@ def get_supervisors():
 			, get_field_as_str(SupervisorField.LAST_NAME) \
 			, get_field_as_str(SupervisorField.FIRST_NAME)])
 
+	supervisors = \
+		[ f"{s[get_field_as_str(SupervisorField.JURISDICTION)]} - {s[get_field_as_str(SupervisorField.LAST_NAME)]}, {s[get_field_as_str(SupervisorField.FIRST_NAME)]}" \
+			for s in supervisors]
+
+	return supervisors
+
 
 def filter_numerical(supervisors):
 	"""
