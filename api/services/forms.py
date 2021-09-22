@@ -41,7 +41,7 @@ def get_supervisors():
 
 	supervisors = \
 		[ f"{s[get_field_as_str(SupervisorField.JURISDICTION)]} - {s[get_field_as_str(SupervisorField.LAST_NAME)]}, {s[get_field_as_str(SupervisorField.FIRST_NAME)]}" \
-			for s in supervisors]
+			for s in supervisors ]
 
 	return supervisors
 
@@ -98,7 +98,7 @@ def is_valid_form(form_data):
 	"""
 	required_fields = ["firstName", "lastName", "supervisor"]
 	for f in required_fields:
-		if form_data.get(f) == None:
+		if form_data.get(f) == '':
 			return False
 	return True
 

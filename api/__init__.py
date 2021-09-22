@@ -20,7 +20,7 @@ def create_app():
 	"""
 	# Instantiate app, passing path to html pages to constructor
 	# and register controllers.
-	app = Flask(__name__, template_folder="../client/html")
+	app = Flask(__name__, template_folder="../client/html", static_folder="../client")
 	app.register_blueprint(controllers.main.blueprint)
 	app.register_blueprint(controllers.forms.blueprint)
 

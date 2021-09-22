@@ -1,0 +1,32 @@
+.main {
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+}
+
+.form {
+	width: 50%;
+	justify-content: center;
+}
+
+.form__fields.row {
+	display:flex;
+	justify-content: space-evenly;
+	margin: 0.5rem auto;	
+	margin-top: 0.5rem;
+}
+
+.form__fields.row.supervisor {
+	width: 10rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.form__text {
+	text-align: center;
+}
+
+#btn-submit {
+	margin-top: 0.5rem;
+}

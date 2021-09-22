@@ -1,1 +1,48 @@
-<p>Hello World!</p>
+{% extends "layout.html" %}
+
+
+{% block main %}
+
+	<form class="form" method="post" action="/api/submit">
+		<div class="form-title">Notification Form</div>
+		<div class="form__fields row">
+			<div class="form__input-fields">
+				<label for="firstName">First Name</label>
+				<br/>
+				<input type="text" name="firstName">
+			</div>
+			<div class="form__input-fields">
+				<label for="lastName">Last Name</label>
+				<br/>
+				<input type="text" name="lastName">
+			</div>
+		</div>
+		<div class="form__text">
+			<p>How would you prefer to be notified?</p>
+		</div>
+		<div class="form__fields row">
+			<div class="form__input-fields">
+				<input type="checkbox" name="email">
+				<label for="lastName">Email</label>
+				<br/>
+				<input type="email" pattern=".+@.+\.\w{3}" name="email">
+			</div>
+			<div class="form__input-fields">
+				<input type="checkbox" name="phoneNumber">
+				<label for="phoneNumber">Phone Number</label>
+				<br/>
+				<input type="tel" name="phoneNumber">
+			</div>
+		</div>
+		<div class="form__fields row supervisor">
+			<label for="supervisor">Supervisor</label>
+			<br/>
+			<select name="supervisor" id="supervisor-dropdown"></select>
+		</div>
+		<div class="form__fields row supervisor">
+			<input type="submit" type="button" value="Submit" id="btn-submit"></input>
+		</div>
+	</form>	
+	<script src={{ url_for('static', filename='js/main.js') }} type="text/javascript"></script>
+
+{% endblock %}

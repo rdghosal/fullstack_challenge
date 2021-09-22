@@ -1,6 +1,7 @@
+import json
 from flask.json import jsonify
 from flask import Blueprint, request
-from werkzeug.exceptions import HTTPException
+from flask.templating import render_template
 from api.services.forms import get_supervisors, is_valid_form
 
 # Instantiate controller as Flask controller.
@@ -11,7 +12,7 @@ def supervisors():
 	"""
 	Returns a sorted list of supervisors retrieved from a separate API.
 	"""
-	return jsonify(get_supervisors())
+	return jsonify({"supervisors":get_supervisors()})
 
 
 @blueprint.route("/api/submit", methods=["POST"])
@@ -23,5 +24,6 @@ def submit():
 	if is_valid_form(form_data):
 		print(form_data)
 	else:
-		return HTTPException("Missing one or more of the following mandatory fields: First Name, Last Name, and/or Supervisor."), 400  	
+		return render_template("error.html", code=400, message="One or more of the following fields was missing: First Name, Last Name, Supervisor.")
+
 
