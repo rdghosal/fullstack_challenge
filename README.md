@@ -21,7 +21,7 @@ pip install -r requirements.txt
 ```
 
 ### III. Starting the Application
-To start the application, execute the following command at the root of the repository folder:
+To start the application, execute the following command at the root of the repository folder and navigate to the localhost url indicated in the console (http://localhost:5000).
 ```bash
 python3 -m flask run
 ```
